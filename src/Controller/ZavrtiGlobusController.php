@@ -15,4 +15,12 @@ class ZavrtiGlobusController extends AbstractController
     {
         return $this->render('home.html.twig');
     }
+
+    /**
+     * @Route("/home", name="zavrti_globus_home")
+     */
+    public function getHome(): Response
+    {
+        return $this->render('home/home.html.twig');
+    }
 }

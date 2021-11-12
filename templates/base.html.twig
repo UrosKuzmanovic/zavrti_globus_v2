@@ -9,10 +9,20 @@
             {#{{ encore_entry_link_tags('app') }}#}
         {% endblock %}
 
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => {
+                        console.log('Service worker registered');
+                    }, err => {
+                        console.log('error', err);
+                    })
+            }
+        </script>
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
-        <link rel="manifest" href="{{ asset('/build/manifest.json') }}">
+        <link rel="manifest" href="{{ asset('/manifest.json') }}">
         {% block favicon %}
             <link rel="icon" type="image/x-icon" href="{{ asset('/images/favicon/favicon.ico') }}"/>
         {% endblock %}
