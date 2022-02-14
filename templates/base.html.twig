@@ -10,14 +10,14 @@
         {% endblock %}
 
         <script>
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(reg => {
-                        console.log('Service worker registered');
-                    }, err => {
-                        console.log('error', err);
-                    })
-            }
+            // if ('serviceWorker' in navigator) {
+            //     navigator.serviceWorker.register('/sw.js')
+            //         .then(reg => {
+            //             console.log('Service worker registered');
+            //         }, err => {
+            //             console.log('error', err);
+            //         })
+            // }
         </script>
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
